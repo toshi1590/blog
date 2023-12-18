@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import BlogPageModule from '../css/BlogPage.module.css';
 import { ArticlePage } from './ArticlePage';
-import { Articles } from './Articles';
+import { ArticlesInBlogPage } from './ArticlesInBlogPage';
 import { Pagination } from './Pagination';
 import { useState } from "react";
 import { useFetch } from './useFetch';
@@ -24,7 +24,7 @@ export const BlogPage = () => {
           ) : (
             // cases of /articles/category and /articles/year/month
             <>
-              <Articles 
+              <ArticlesInBlogPage 
                 page={page} 
                 articles={articles} 
                 setArticles={setArticles} 

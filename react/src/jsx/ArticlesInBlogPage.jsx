@@ -1,8 +1,8 @@
 import { useLocation, useNavigate } from 'react-router-dom';
-import ArticlesModule from '../css/Articles.module.css';
+import ArticlesInBlogPageModule from '../css/ArticlesInBlogPage.module.css';
 import { useEffect } from "react";
 
-export const Articles = (props) => {
+export const ArticlesInBlogPage = (props) => {
   const location = useLocation();  
   const navigate = useNavigate();
 
@@ -19,12 +19,12 @@ export const Articles = (props) => {
 
   return (
     <>
-       <div className={ArticlesModule.articles}>
+       <div className={ArticlesInBlogPageModule.articles}>
         {props.articles.map((element, index) => {
           if (index >= (props.page - 1) * props.the_number_of_elements_per_page && index < (props.page * props.the_number_of_elements_per_page)) {
             return (
-              <div key={index} className={ArticlesModule.article} onClick={() => {navigate(`/articles/${element.id}`)}}>
-                <img className={ArticlesModule.thumbnail} src={`http://localhost:82/api/images/${element.id}`} alt="" />
+              <div key={index} className={ArticlesInBlogPageModule.article} onClick={() => {navigate(`/articles/${element.id}`)}}>
+                <img className={ArticlesInBlogPageModule.thumbnail} src={`http://localhost:82/api/images/${element.id}`} alt="" />
                 <div>title: {element.title}</div>
                 <div>category: {element.category}</div>
                 <div>date: {element.created_at}</div>
