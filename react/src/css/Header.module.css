@@ -1,0 +1,72 @@
+header {
+  background-color: lightpink;
+  height: 30px;
+}
+
+.hidden {
+  display: none;
+}
+
+@media only screen and (min-width: 800px) {
+  .hamburger_menu {
+    display: none;
+  }
+
+  nav {
+    display: flex;
+    height: 100%;
+  }
+  
+  .tab {
+    flex-grow: 1;
+    position: relative;
+    text-align: center;
+    height: 100%;
+  }
+  
+  .tab:hover .dropdown {
+    display: block;
+    background-color: lightpink;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .dropdown {
+    display: none;
+  }
+  
+  .navlink {
+    text-decoration: none; 
+    line-height: 30px;
+  }
+} @media only screen and (max-width: 799px) {
+  nav {
+    display: none;
+  }
+
+  .hamburger_menu {
+    position: relative;
+    height: 100%;
+    position: relative;
+  }
+
+  .hamburger_btn {
+    height: 100%;
+    width: 30px;
+    background-color: lightpink;
+    border: none;
+    cursor: pointer;
+    line-height: 30px;
+  }
+
+  .hamburger_items {
+    position: absolute;
+    width: 100%;
+    background-color: lightpink;
+  }
+
+  .hamburger_item {
+    height: 30px;
+    line-height: 30px;
+  }
+}

@@ -1,0 +1,25 @@
+.page {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  height: calc(100vh - 30px);
+}
+
+.main {
+  background-color: white;
+  margin: 10px;
+}
+
+.sidebar {
+  text-align: center;
+  background-color: white;
+  margin: 10px;
+}
+
+.sidebar_item {
+  cursor: pointer;  
+  padding: 5px;
+}
+
+.sidebar_item:hover {
+  opacity: 50%;
+}

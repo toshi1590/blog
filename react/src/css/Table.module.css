@@ -1,0 +1,43 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tr:nth-child(odd) {
+  background-color: lightgray;
+}
+
+.td {
+  text-align: center;
+  padding: 5px;
+}
+
+.edit_btn {
+  background-color: blue;
+  padding: 5px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.update_btn {
+  background-color: green;
+  padding: 5px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.delete_btn {
+  background-color: red;
+  padding: 5px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.image {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
