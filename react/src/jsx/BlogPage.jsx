@@ -3,8 +3,12 @@ import BlogPageModule from '../css/BlogPage.module.css';
 import { ArticlePage } from './ArticlePage';
 import { ArticlesInBlogPage } from './ArticlesInBlogPage';
 import { Pagination } from './Pagination';
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useFetch } from './useFetch';
+
+
+import { Search } from './Search';
+
 
 export const BlogPage = () => {
   const location = useLocation();
@@ -13,6 +17,15 @@ export const BlogPage = () => {
   const the_number_of_elements_per_page = 6;
   const categories = useFetch('http://localhost:82/api/articles/categories');
   const months = useFetch('http://localhost:82/api/articles/months');
+
+
+  const keyword_ref = useRef();
+
+  // const search = (data, key, keyword) => {
+  //   const result = Search(data, key, keyword);
+  //   console.log(result);
+  // }
+
 
   return (
     <>
@@ -24,6 +37,12 @@ export const BlogPage = () => {
           ) : (
             // cases of /articles/category and /articles/year/month
             <>
+
+              <div>
+                <input type="text" name="keyword" ref={keyword_ref} />
+                <input type="button" value="search" onClick={() => {setArticles(Search(articles, 'title', keyword_ref.current.value))}} />
+              </div>
+
               <ArticlesInBlogPage 
                 page={page} 
                 articles={articles} 
