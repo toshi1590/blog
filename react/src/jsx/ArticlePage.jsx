@@ -22,7 +22,7 @@ export const ArticlePage = () => {
           return (
             <div key={index}>
               <div className={ArticlePageModule.title}>{element.title}</div>
-              <img className={ArticlePageModule.thumbnail} src={`http://localhost:82/api/images/${element.id}`} alt="oops" />
+              <img className={ArticlePageModule.thumbnail} src={`http://localhost:82/api/images/${element.image_id_for_thumbnail}`} alt="oops" />
               <div>posted on {element.created_at}</div>
               <div className='markdown'>
                 <Markdown>{element.content}</Markdown>  

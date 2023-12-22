@@ -24,7 +24,7 @@ export const ArticlesInBlogPage = (props) => {
           if (index >= (props.page - 1) * props.the_number_of_elements_per_page && index < (props.page * props.the_number_of_elements_per_page)) {
             return (
               <div key={index} className={ArticlesInBlogPageModule.article} onClick={() => {navigate(`/articles/${element.id}`)}}>
-                <img className={ArticlesInBlogPageModule.thumbnail} src={`http://localhost:82/api/images/${element.id}`} alt="" />
+                <img className={ArticlesInBlogPageModule.thumbnail} src={`http://localhost:82/api/images/${element.image_id_for_thumbnail}`} alt="" />
                 <div>title: {element.title}</div>
                 <div>category: {element.category}</div>
                 <div>date: {element.created_at}</div>
