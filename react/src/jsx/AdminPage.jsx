@@ -42,7 +42,8 @@ export const AdminPage = () => {
     const cookie = cookies.find((_) => _.startsWith("XSRF-TOKEN")) || "";
     const csrfToken = decodeURIComponent(cookie.split("=")[1]);
 
-    fetch("http://localhost:8000/profile", {
+    // fetch("http://localhost:8000/profile", {
+    fetch("http://localhost:82/profile", {
       method: "GET",
       headers: {
         "X-XSRF-TOKEN": csrfToken,
@@ -64,7 +65,8 @@ export const AdminPage = () => {
     const cookie = cookies.find((_) => _.startsWith("XSRF-TOKEN")) || "";
     const csrfToken = decodeURIComponent(cookie.split("=")[1]);
 
-    fetch("http://localhost:8000/logout", {
+    // fetch("http://localhost:8000/logout", {
+    fetch("http://localhost:82/logout", {
       method: "POST",
       headers: {
         "X-XSRF-TOKEN": csrfToken,

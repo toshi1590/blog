@@ -11,7 +11,8 @@ export const LoginPage = () => {
   const password_ref = useRef();
 
   const login = () => {
-    fetch("http://localhost:8000/login", {
+    // fetch("http://localhost:8000/login", {
+    fetch("http://localhost:82/login", {
       headers: {
         Accept: "application/json",
       },
@@ -23,7 +24,8 @@ export const LoginPage = () => {
         const cookie = cookies.find((_) => _.startsWith("XSRF-TOKEN")) || "";
         const csrfToken = decodeURIComponent(cookie.split("=")[1]);
 
-        fetch("http://localhost:8000/login", {
+        // fetch("http://localhost:8000/login", {
+        fetch("http://localhost:82/login", {
           method: "POST",
           headers: {
             "X-XSRF-TOKEN": csrfToken,

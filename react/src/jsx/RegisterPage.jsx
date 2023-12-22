@@ -12,7 +12,8 @@ export const RegisterPage = () => {
   const password_ref = useRef();
 
   const register = () => {
-    fetch("http://localhost:8000/register", {
+    // fetch("http://localhost:8000/register", {
+    fetch("http://localhost:82/register", {
       headers: {
         Accept: "application/json",
       },
@@ -24,7 +25,8 @@ export const RegisterPage = () => {
         const cookie = cookies.find((_) => _.startsWith("XSRF-TOKEN")) || "";
         const csrfToken = decodeURIComponent(cookie.split("=")[1]);
 
-        fetch("http://localhost:8000/register", {
+        // fetch("http://localhost:8000/register", {
+        fetch("http://localhost:82/register", {
           method: "POST",
           headers: {
             "X-XSRF-TOKEN": csrfToken,
